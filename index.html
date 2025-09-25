@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.25">
+  <title>Svendborg Bildetailing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #679dc1;
+      color: #ffffff;
+      position: relative;
+      overflow-x: hidden; /* forhindrer scrollbars fra slideren */
+    }
+
+    header {
+      background: #3d527a;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      padding-bottom: 70px; /* plads til footer */
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #111;
+      color: white;
+      padding: 12px 25px;
+      margin-top: 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #444;
+    }
+
+    footer {
+      background: #2d446c;
+      color: white;
+      text-align: center;
+      padding: 12px 10px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 0.9em;
+      z-index: 2;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;   /* holder logo og tekst på samme linje */
+      justify-content: center;
+      position: relative;
+    }
+
+    .header-content a {
+      display: flex;         /* sørger for at link og logo behandles som en blok */
+      align-items: center;   /* centrer logoet lodret */
+      text-decoration: none; /* fjerner underline */
+      line-height: 0;        /* ingen ekstra luft */
+    }
+
+    .logo {
+      height: 120px;
+      width: auto;
+      display: block;        /* fjerner evt. luft under billedet */
+      position: absolute;    /* placerer det til venstre */
+      left: 20px;
+    }
+
+    /* Header tekst centreret */
+    .header-text {
+      text-align: center;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .header-text p {
+      margin: 0;
+    }
+
+    .serviceknap {
+      display: inline-block; 
+      padding: 20px 40px; 
+      background-color: #1e90ff; 
+      color: white; 
+      text-decoration: none; 
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .serviceknap:hover {
+      background-color: #0b7de7; /* mørkere farve ved hover */
+      transform: translateY(-8px); /* løft opad */
+      box-shadow: 0 8px 24px rgba(4, 32, 65, 0.4);
+      z-index: 999; /* placér kortet over footeren */
+    }
+
+    /* -------- SLIDER BAGGRUND -------- */
+    .image-strip {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1; /* bag alt indhold */
+      display: flex;
+      align-items: flex-start;
+      pointer-events: none;
+      padding-top: 360px;
+    }
+    
+    .strip-track {
+      display: flex;
+      gap: 16px;
+      animation: scrollLeft 40s linear infinite; /* længere varighed = glattere */
+      will-change: transform; /* giver GPU-hjælp */
+    }
+
+    .strip-track img {
+      width: 350px;
+      aspect-ratio: 16/9;    /* holder format */
+      object-fit: cover;     /* undgår strækning */
+      border-radius: 8px;
+      opacity: 0.85;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+  <!-- BAGGRUNDS SLIDER -->
+  <div class="image-strip">
+    <div class="strip-track">
+      <img src="Billeder/IMG_4912.jpg" alt="rød tesla interiør">
+      <img src="Billeder/IMG_4896.jpg" alt="seb rød tesla hjul">
+      <img src="Billeder/IMG_4911.jpg" alt="">
+      <img src="Billeder/IMG_4901.jpg" alt="">
+      <img src="Billeder/IMG_4918.jpg" alt="sort tesla interiør">
+      <img src="Billeder/IMG_4868.jpeg" alt="">
+      <img src="Billeder/IMG_4880.jpeg" alt="">
+      <img src="Billeder/IMG_4908.jpg" alt="">
+      <img src="Billeder/IMG_4897.jpg" alt="">
+      <img src="Billeder/IMG_4912.jpg" alt="">
+      <img src="Billeder/IMG_4896.jpg" alt="">
+      <img src="Billeder/IMG_4911.jpg" alt="">
+      <img src="Billeder/IMG_4901.jpg" alt="">
+      <img src="Billeder/IMG_4881.jpeg" alt="">
+      <img src="Billeder/IMG_4868.jpeg" alt="">
+      <img src="Billeder/IMG_4880.jpeg" alt="">
+      <img src="Billeder/IMG_4908.jpg" alt="">
+      <img src="Billeder/IMG_4897.jpg" alt="">
+    </div>
+  </div>
+
+  <header>
+    <div class="header-content">
+      <a href="index.html">
+        <img src="Billeder/logo_bildetail_færdig.png" alt="Svendborg Bildetailing Logo" class="logo">
+      </a>
+
+      <div class="header-text">
+        <h1>Svendborg Bildetail</h1>
+        <p>Vi giver din bil nyt liv!</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="services.html">Services</a>
+      <a href="omos.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="før-efter.html">Før & Efter</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h1>Velkommen til Svendborg Bildetail</h1>
+      <h2>Din bil fortjener at skinne, vi giver den, den bedste pleje indvendigt og udvendigt.</h2>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <a href="services.html" class="serviceknap">Se vores services</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Svendborg Bildetail</p>
+  </footer>
+</body>
+</html>
