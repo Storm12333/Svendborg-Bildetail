@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Svendborg Bildetailing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #679dc1;
+      color: #ffffff;
+      position: relative;
+      overflow-x: hidden; /* forhindrer scrollbars fra slideren */
+    }
+
+    header {
+      background: #3d527a;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Main tekst med plads til venstre billeder --- */
+    main {
+      padding-left: 420px; /* plads til venstre billeder */
+      padding-right: 20px;
+      padding-top: 40px;
+      padding-bottom: 70px; /* plads til footer */
+      max-width: 900px;
+      margin: auto;
+      text-align: left;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Knap */
+    .tilbageknap {
+      display: inline-block; 
+      padding: 20px 40px; 
+      background-color: #1e90ff; 
+      color: white; 
+      text-decoration: none; 
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .tilbageknap:hover {
+      background-color: #0b7de7;
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(4, 32, 65, 0.4);
+      z-index: 999;
+    }
+
+    footer {
+      background: #2d446c;
+      color: white;
+      text-align: center;
+      padding: 12px 10px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 0.9em;
+      z-index: 2;
+    }
+
+    /* Header logo og tekst */
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .header-content a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      line-height: 0;
+    }
+
+    .logo {
+      height: 120px;
+      width: auto;
+      display: block;
+      position: absolute;
+      left: 20px;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 2.5em;
+      text-align: center;
+    }
+
+    .header-text p {
+      margin: 0;
+      text-align: center;
+    }
+
+    /* Venstre billeder */
+    .venstre-billeder {
+      position: fixed;   /* billeder følger skærmen */
+      top: 167px;        /* afstand fra top */
+      left: 75px;        /* venstre kant */
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1;        /* under teksten */
+    }
+
+    .venstre-billeder img {
+      width: 350px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    /* Punktliste */
+    .punktliste {
+      list-style-type: disc;
+      margin-left: 0;
+      padding-left: 20px;
+      font-size: 20px;
+    }
+
+    /* --- Responsive billeder og main --- */
+    @media (max-width: 1366px) {
+      .venstre-billeder img {
+        width: 250px;
+        height: 170px;
+      }
+      main {
+        padding-left: 350px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .venstre-billeder img {
+        width: 200px;
+        height: 140px;
+      }
+      main {
+        padding-left: 250px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .venstre-billeder {
+        position: relative; /* billeder følger teksten */
+        flex-direction: row;
+        gap: 10px;
+        margin-bottom: 20px;
+        top: auto;
+        left: auto;
+      }
+      .venstre-billeder img {
+        width: 120px;
+        height: 80px;
+      }
+      main {
+        padding-left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <a href="index.html">
+        <img src="Billeder/logo_bildetail_færdig.png" alt="Svendborg Bildetailing Logo" class="logo">
+      </a>
+      <div class="header-text">
+        <h1>Svendborg Bildetail</h1>
+        <p>Vi giver din bil nyt liv!</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="services.html">Services</a>
+      <a href="omos.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="før-efter.html">Før & Efter</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="udvendig-vask">
+      <h1>Interiør rengøring</h1>
+
+      <div class="venstre-billeder">
+        <img src="Billeder/IMG_4918.jpeg" alt="Bil interiør 1">
+        <img src="Billeder/IMG_4881.jpeg" alt="Bil interiør 2">
+      </div>
+
+      <h2>Få en bil, som dufter frisk, ser indbydende ud indvendigt og som er dejlig at være i. Vores interiør rengøring går i dybden med at fjerne støv, snavs og pletter.</h2>
+
+      <h2>Rengøringen inkluderer:</h2>
+      <ul class="punktliste">
+        <li>Støvsugning af hele interiør</li>
+        <li>Aftørring af overflader og pletfjerning</li>
+        <li>Rens for støv</li>
+        <li>Fuld rengøring af tæpper / måtter</li>
+      </ul>
+
+      <a href="services.html" class="tilbageknap">Tilbage</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Svendborg Bildetail</p>
+  </footer>
+
+</body>
+</html>
