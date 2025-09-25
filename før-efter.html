@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Før & Efter - Svendborg Bildetail</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #679dc1;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    header {
+      background: #3d527a;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-top: 40px;
+      padding-bottom: 70px; 
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    footer {
+      background: #2d446c;
+      color: white;
+      text-align: center;
+      padding: 12px 10px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 0.9em;
+      z-index: 2;
+    }
+
+    .tilbageknap {
+      display: inline-block; 
+      padding: 20px 40px; 
+      background-color: #1e90ff; 
+      color: white; 
+      text-decoration: none; 
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-top: 20px;
+    }
+
+    .tilbageknap:hover {
+      background-color: #0b7de7;
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(4, 32, 65, 0.4);
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
+    .foer-efter {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap; /* gør responsive */
+    }
+
+    .foer-efter img {
+      width: 45%;
+      max-width: 400px;
+      border-radius: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .foer-efter img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <a href="index.html">
+        <img src="Billeder/logo_bildetail_færdig.png" alt="Svendborg Bildetail Logo" style="height: 120px; position: absolute; left: 20px;">
+      </a>
+      <div class="header-text">
+        <h1>Svendborg Bildetail</h1>
+        <p>Vi giver din bil nyt liv!</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="services.html">Services</a>
+      <a href="omos.html">Om os</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="før-efter.html">Før & Efter</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Før & Efter</h1>
+    <p>Se forskellen på vores grundige bilpleje!</p>
+
+    <div class="foer-efter">
+      <img src="Billeder/IMG_4866.jpeg" alt="Før behandling">
+      <img src="Billeder/IMG_4881.jpeg" alt="Efter behandling">
+      <img src="Billeder/baggagefør.jpg" alt="Før behandling">
+      <img src="Billeder/baggageefter.jpg" alt="Efter behandling">
+      <img src="Billeder/telsafør.png" alt="Før behandling">
+      <img src="Billeder/teslaefter.png" alt="Efter behandling">
+    </div>
+
+    <a href="services.html" class="tilbageknap">Tilbage</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Svendborg Bildetail</p>
+  </footer>
+
+</body>
+</html>
